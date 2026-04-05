@@ -20,11 +20,13 @@
   ],
   "pinned": [
     "osmosis-cancel-limitorders",
+    "cosmos-chain-wallet-checker",
+    "tfm-cancel-orders",
+    "autoswap-cancel-orders",
+    "cosmos-node-status-report",
     "osmosis-list-pools",
     "osmosis-ibc-monitor",
-    "cosmos-chain-wallet-checker",
-    "osmosis-tick-price",
-    "grpcwebexplorer"
+    "osmosis-tick-price"
   ],
   "titleOverrides": {
     "grpcwebexplorer": "gRPC Web Explorer",
@@ -47,6 +49,7 @@
     "Payroll-Manangement-System",
     "kucoin-node-sdk",
     "GaijinMarketScrapper",
-    "phishing-block-list"
+    "phishing-block-list",
+    "crypto-payroll"
   ]
 }
