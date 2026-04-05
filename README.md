@@ -8,27 +8,26 @@ Osmosis & Cosmos ecosystem utilities by @jasbanza
 
 | Name | Description | Language | Links |
 |------|-------------|----------|-------|
-| **Osmosis Cancel Limitorders** | Look up and cancel Osmosis limit orders | JavaScript | [Repo](https://github.com/jasbanza/osmosis-cancel-limitorders) / [Launch](https://jasbanza.github.io/osmosis-cancel-limitorders/) |
-| **Osmosis List Pools** | Advanced osmosis pool search | HTML | [Repo](https://github.com/jasbanza/osmosis-list-pools) / [Launch](https://jasbanza.github.io/osmosis-list-pools/) |
-| **Osmosis IBC Monitor** | Monitors IBC client status for Osmosis assets. Identifies expired or frozen IBC clients. | JavaScript | [Repo](https://github.com/jasbanza/osmosis-ibc-monitor) |
+| **CCTP Relayer** | CCTP relayer implementation | JavaScript | [Repo](https://github.com/jasbanza/cctp-relayer) / [Launch](https://jasbanza.github.io/cctp-relayer/) |
 | **Cosmos Chain Wallet Checker** | Checks wallet balances at specific block heights | JavaScript | [Repo](https://github.com/jasbanza/cosmos-chain-wallet-checker) / [Launch](https://jasbanza.github.io/cosmos-chain-wallet-checker/) |
+| **Osmosis Cancel Limitorders** | Look up and cancel Osmosis limit orders | JavaScript | [Repo](https://github.com/jasbanza/osmosis-cancel-limitorders) / [Launch](https://jasbanza.github.io/osmosis-cancel-limitorders/) |
 | **Osmosis Tick Price** | Get the price of a pool's tick on Osmosis. | HTML | [Repo](https://github.com/jasbanza/osmosis-tick-price) / [Launch](https://jasbanza.github.io/osmosis-tick-price/) |
-| **gRPC Web Explorer** | Inspired by GRPCUI, with more persistent state / locally stored  |  | [Repo](https://github.com/jasbanza/grpcwebexplorer) |
+| **Osmosis List Pools** | Advanced osmosis pool search | HTML | [Repo](https://github.com/jasbanza/osmosis-list-pools) / [Launch](https://jasbanza.github.io/osmosis-list-pools/) |
+| **TFM Cancel Orders** | dApp to cancel orders on TFM | JavaScript | [Repo](https://github.com/jasbanza/tfm-cancel-orders) / [Launch](https://jasbanza.github.io/tfm-cancel-orders/) |
+| **Autoswap Cancel Orders** | Frontend to cancel missing limit orders on Autonomy's Autoswap (on Osmosis) | JavaScript | [Repo](https://github.com/jasbanza/autoswap-cancel-orders) / [Launch](https://jasbanza.github.io/autoswap-cancel-orders/) |
+| **Cosmos Node Status Report** | Tests cosmos-sdk blockchain nodes (RPC/REST/gRPC) and generates a report. | Python | [Repo](https://github.com/jasbanza/cosmos-node-status-report) |
+| **Osmosis IBC Monitor** | Monitors IBC client status for Osmosis assets. Identifies expired or frozen IBC clients. | JavaScript | [Repo](https://github.com/jasbanza/osmosis-ibc-monitor) |
 
 ## All Repositories
 
 | Name | Description | Language | Updated | Links |
 |------|-------------|----------|---------|-------|
-| **CCTP Relayer** | CCTP relayer implementation | JavaScript | 2026-04-02 | [Repo](https://github.com/jasbanza/cctp-relayer) / [Launch](https://jasbanza.github.io/cctp-relayer/) |
 | **Skip Swap Exporter** | Exports csv of skip swaps for source/destination addresses | JavaScript | 2026-01-25 | [Repo](https://github.com/jasbanza/skip-swap-exporter) / [Launch](https://jasbanza.github.io/skip-swap-exporter/) |
-| **Cosmos Node Status Report** | Tests cosmos-sdk blockchain nodes (RPC/REST/gRPC) and generates a report. | Python | 2025-11-12 | [Repo](https://github.com/jasbanza/cosmos-node-status-report) |
+| **gRPC Web Explorer** | Inspired by GRPCUI, with more persistent state / locally stored  |  | 2025-11-29 | [Repo](https://github.com/jasbanza/grpcwebexplorer) |
 | **Wallet Simulator** | Browser extension allowing arbitrary custom addresses for frontend testing purposes. |  | 2025-10-24 | [Repo](https://github.com/jasbanza/wallet-simulator) |
 | **Cosmosmillions Rescue** | dApp to withdraw from cosmosmillions on lum network | JavaScript | 2025-04-23 | [Repo](https://github.com/jasbanza/cosmosmillions-rescue) / [Launch](https://jasbanza.github.io/cosmosmillions-rescue/) |
 | **Node.js RPC Proxy** | simple rpc proxy with rate limiting and shared key | JavaScript | 2025-02-19 | [Repo](https://github.com/jasbanza/nodejs-rpc-proxy) |
-| **Crypto Payroll** | payroll engine for crypto | JavaScript | 2024-06-10 | [Repo](https://github.com/jasbanza/crypto-payroll) |
-| **TFM Cancel Orders** | dApp to cancel orders on TFM | JavaScript | 2023-12-17 | [Repo](https://github.com/jasbanza/tfm-cancel-orders) / [Launch](https://jasbanza.github.io/tfm-cancel-orders/) |
 | **Cosmos Relayer Monitor** | system service to spawn rly child process with stdout to websocket using nodejs | HTML | 2023-12-11 | [Repo](https://github.com/jasbanza/cosmos-relayer-monitor) |
-| **Autoswap Cancel Orders** | Frontend to cancel missing limit orders on Autonomy's Autoswap (on Osmosis) | JavaScript | 2023-11-03 | [Repo](https://github.com/jasbanza/autoswap-cancel-orders) / [Launch](https://jasbanza.github.io/autoswap-cancel-orders/) |
 | **Osmosis CL Pool Alerts** | Bot to notify of supercharged pool tick ranges | JavaScript | 2023-10-09 | [Repo](https://github.com/jasbanza/osmosis-cl-pool-alerts) |
 | **Osmosis CL Bot Demo** | Bot to manage supercharged positions on Osmosis |  | 2023-09-25 | [Repo](https://github.com/jasbanza/osmosis-cl-bot-demo) |
 | **Osmosis Companion** | A browser extension companion utility for https://app.osmosis.zone | JavaScript | 2023-08-23 | [Repo](https://github.com/jasbanza/osmosis-companion) / [Launch](https://jasbanza.github.io/osmosis-companion/) |
