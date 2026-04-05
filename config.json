@@ -19,14 +19,14 @@
     "cosmosmillions-rescue"
   ],
   "pinned": [
-    "osmosis-cancel-limitorders",
     "cosmos-chain-wallet-checker",
+    "osmosis-cancel-limitorders",
+    "osmosis-tick-price",
+    "osmosis-list-pools",
     "tfm-cancel-orders",
     "autoswap-cancel-orders",
     "cosmos-node-status-report",
-    "osmosis-list-pools",
-    "osmosis-ibc-monitor",
-    "osmosis-tick-price"
+    "osmosis-ibc-monitor"
   ],
   "titleOverrides": {
     "grpcwebexplorer": "gRPC Web Explorer",
