@@ -19,6 +19,7 @@
     "cosmosmillions-rescue"
   ],
   "pinned": [
+    "cctp-relayer",
     "cosmos-chain-wallet-checker",
     "osmosis-cancel-limitorders",
     "osmosis-tick-price",
