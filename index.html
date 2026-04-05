@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osmosis Utils - Menu</title>
+    <title>Osmosis Utils</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -26,7 +22,7 @@
         h1 {
             color: white;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-size: 2.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
@@ -34,62 +30,126 @@
         .subtitle {
             color: rgba(255, 255, 255, 0.9);
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .section-label {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .section-label svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
 
         .tiles-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
         }
 
         .tile {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
-            width: 300px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
         }
 
         .tile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+        }
+
+        .tile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .tile-title {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #1a1a2e;
             font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.35rem;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .badge {
+            font-size: 0.68rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 999px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .lang-badge {
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .star-badge {
+            background: #fef3c7;
+            color: #92400e;
         }
 
         .tile-description {
-            color: #666;
-            margin-bottom: 1.5rem;
+            color: #555;
+            margin-bottom: 1.25rem;
             flex-grow: 1;
-            line-height: 1.6;
+            line-height: 1.55;
+            font-size: 0.88rem;
+        }
+
+        .tile-meta {
+            color: #999;
+            font-size: 0.75rem;
+            margin-bottom: 0.75rem;
         }
 
         .tile-links {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .tile-link {
             display: inline-flex;
             align-items: center;
-            padding: 0.75rem 1rem;
+            padding: 0.55rem 0.9rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.2s ease;
+            font-size: 0.82rem;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            flex: 1;
             justify-content: center;
+        }
+
+        .tile-link:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
         }
 
         .tile-link.deployment {
@@ -97,139 +157,225 @@
             color: white;
         }
 
-        .tile-link.deployment:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
-
         .tile-link.repo {
             background: #24292e;
             color: white;
         }
 
-        .tile-link.repo:hover {
-            background: #1a1e22;
+        .tile-link svg {
+            margin-right: 0.35rem;
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
         }
 
-        .tile-link svg {
-            margin-right: 0.5rem;
-            width: 16px;
-            height: 16px;
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .skeleton {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            min-height: 180px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .error-banner {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .tile {
-                width: 100%;
-            }
+            body { padding: 1rem; }
+            h1 { font-size: 1.8rem; }
+            .subtitle { font-size: 0.95rem; }
+            .tiles-container { grid-template-columns: 1fr; gap: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Osmosis Utils</h1>
-        <p class="subtitle">Menu for Osmosis utilities</p>
-
-        <div class="tiles-container">
-            <!-- Osmosis List Pools -->
-            <div class="tile">
-                <h2 class="tile-title">Osmosis List Pools</h2>
-                <p class="tile-description">
-                    A utility to list and explore pools on the Osmosis decentralized exchange. View pool information, liquidity, and trading data.
-                </p>
-                <div class="tile-links">
-                    <a href="https://jasbanza.github.io/osmosis-list-pools/" target="_blank" class="tile-link deployment">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                        Launch Utility
-                    </a>
-                    <a href="https://github.com/jasbanza/osmosis-list-pools" target="_blank" class="tile-link repo">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-                        </svg>
-                        View Repository
-                    </a>
-                </div>
-            </div>
-
-            <!-- Cosmos Chain Wallet Checker -->
-            <div class="tile">
-                <h2 class="tile-title">Cosmos Chain Wallet Checker</h2>
-                <p class="tile-description">
-                    Check wallet balances and holdings across Cosmos ecosystem chains. A convenient tool for monitoring your assets across multiple chains.
-                </p>
-                <div class="tile-links">
-                    <a href="https://jasbanza.github.io/cosmos-chain-wallet-checker/" target="_blank" class="tile-link deployment">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                        Launch Utility
-                    </a>
-                    <a href="https://github.com/jasbanza/cosmos-chain-wallet-checker" target="_blank" class="tile-link repo">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-                        </svg>
-                        View Repository
-                    </a>
-                </div>
-            </div>
-
-            <!-- Example Tile 2 -->
-            <div class="tile">
-                <h2 class="tile-title">Utility Name 2</h2>
-                <p class="tile-description">
-                    Description of your second Osmosis utility. Explain the functionality and benefits of this tool.
-                </p>
-                <div class="tile-links">
-                    <a href="https://jasbanza.github.io/osmosis-utils/utility2" target="_blank" class="tile-link deployment">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                        Launch Utility
-                    </a>
-                    <a href="https://github.com/jasbanza/osmosis-utils" target="_blank" class="tile-link repo">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-                        </svg>
-                        View Repository
-                    </a>
-                </div>
-            </div>
-
-            <!-- Example Tile 3 -->
-            <div class="tile">
-                <h2 class="tile-title">Utility Name 3</h2>
-                <p class="tile-description">
-                    Description of your third Osmosis utility. Highlight key features and use cases for this utility.
-                </p>
-                <div class="tile-links">
-                    <a href="https://jasbanza.github.io/osmosis-utils/utility3" target="_blank" class="tile-link deployment">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                        Launch Utility
-                    </a>
-                    <a href="https://github.com/jasbanza/osmosis-utils" target="_blank" class="tile-link repo">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-                        </svg>
-                        View Repository
-                    </a>
-                </div>
+        <h1 id="page-title">Osmosis Utils</h1>
+        <p class="subtitle" id="page-subtitle">Loading...</p>
+        <div id="content">
+            <div class="tiles-container">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
             </div>
         </div>
+        <p class="footer" id="footer"></p>
     </div>
+    <script>
+    (async () => {
+        const LANG_COLORS = {
+            JavaScript: "#f1e05a", TypeScript: "#3178c6", Python: "#3572A5",
+            HTML: "#e34c26", CSS: "#563d7c", Go: "#00ADD8", Rust: "#dea584",
+            Shell: "#89e051", Vue: "#41b883", Java: "#b07219", PHP: "#4F5D95",
+        };
+
+        function titleFromName(name) {
+            return name.replace(/[-_]/g, " ").replace(/\b\w/g, c => c.toUpperCase())
+                .replace(/\bIbc\b/g, "IBC").replace(/\bCctp\b/g, "CCTP")
+                .replace(/\bRpc\b/g, "RPC").replace(/\bApi\b/g, "API")
+                .replace(/\bSdk\b/g, "SDK").replace(/\bGrpc\b/g, "gRPC")
+                .replace(/\bCsv\b/g, "CSV").replace(/\bCl\b/g, "CL")
+                .replace(/\bOsmojs\b/g, "OsmoJS").replace(/\bNodejs\b/g, "Node.js")
+                .replace(/\bTfm\b/g, "TFM").replace(/\bDapp\b/g, "dApp");
+        }
+
+        function relativeTime(dateStr) {
+            const diff = Date.now() - new Date(dateStr).getTime();
+            const mins = Math.floor(diff / 60000);
+            if (mins < 60) return `${mins}m ago`;
+            const hrs = Math.floor(mins / 60);
+            if (hrs < 24) return `${hrs}h ago`;
+            const days = Math.floor(hrs / 24);
+            if (days < 30) return `${days}d ago`;
+            const months = Math.floor(days / 30);
+            if (months < 12) return `${months}mo ago`;
+            return `${Math.floor(months / 12)}y ago`;
+        }
+
+        function renderTile(repo, config) {
+            const title = (config.titleOverrides && config.titleOverrides[repo.name]) || titleFromName(repo.name);
+            const desc = repo.description || "No description available.";
+            const lang = repo.language;
+            const stars = repo.stargazers_count || 0;
+            const repoUrl = repo.html_url;
+            const deployUrl = `https://${config.githubUser}.github.io/${repo.name}/`;
+
+            let badges = "";
+            if (lang) {
+                const color = LANG_COLORS[lang] || "#888";
+                badges += `<span class="badge lang-badge" style="background:${color}">${lang}</span>`;
+            }
+            if (stars > 0) {
+                badges += `<span class="badge star-badge">${stars} \u2605</span>`;
+            }
+
+            let links = "";
+            if (repo.has_pages) {
+                links += `<a href="${deployUrl}" target="_blank" rel="noopener" class="tile-link deployment">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/><path d="M5 5v14h14v-7h-2v5H7V7h5V5H5z"/></svg>
+                    Launch</a>`;
+            }
+            links += `<a href="${repoUrl}" target="_blank" rel="noopener" class="tile-link repo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                Repository</a>`;
+
+            const meta = repo.pushed_at ? `Updated ${relativeTime(repo.pushed_at)}` : "";
+
+            return `<div class="tile">
+                <div class="tile-header">
+                    <h2 class="tile-title">${title}</h2>
+                    <div class="badges">${badges}</div>
+                </div>
+                <p class="tile-description">${desc}</p>
+                ${meta ? `<p class="tile-meta">${meta}</p>` : ""}
+                <div class="tile-links">${links}</div>
+            </div>`;
+        }
+
+        async function fetchAllRepos(user) {
+            const all = [];
+            let page = 1;
+            while (true) {
+                const res = await fetch(
+                    `https://api.github.com/users/${user}/repos?per_page=100&page=${page}&sort=pushed&direction=desc`
+                );
+                if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+                const batch = await res.json();
+                if (!batch.length) break;
+                all.push(...batch);
+                if (batch.length < 100) break;
+                page++;
+            }
+            return all;
+        }
+
+        try {
+            const configRes = await fetch("config.json");
+            if (!configRes.ok) throw new Error("Failed to load config.json");
+            const config = await configRes.json();
+
+            document.getElementById("page-title").textContent = config.title;
+            document.getElementById("page-subtitle").textContent = config.subtitle;
+            document.title = config.title;
+
+            const excludeSet = new Set(config.exclude || []);
+            const pinnedSet = new Set(config.pinned || []);
+            const includeSet = new Set(config.include || []);
+            const patterns = (config.repoPatterns || []).map(p => new RegExp(p));
+
+            const ghRepos = await fetchAllRepos(config.githubUser);
+
+            const matches = ghRepos.filter(r => {
+                if (r.private) return false;
+                if (excludeSet.has(r.name)) return false;
+                if (pinnedSet.has(r.name)) return true;
+                if (includeSet.has(r.name)) return true;
+                if (r.fork) return false;
+                return patterns.some(p => p.test(r.name));
+            });
+
+            const repoMap = new Map(matches.map(r => [r.name, r]));
+
+            const pinned = (config.pinned || [])
+                .filter(name => repoMap.has(name))
+                .map(name => repoMap.get(name));
+
+            const rest = matches
+                .filter(r => !pinnedSet.has(r.name))
+                .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+
+            let html = "";
+
+            if (pinned.length) {
+                html += `<div class="section-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.456.734a1.75 1.75 0 012.826.504l.613 1.327a3.08 3.08 0 002.084 1.707l2.454.584c1.332.317 1.8 1.972.832 2.94L11.06 10l3.72 3.72a.749.749 0 01-1.06 1.06L10 11.06l-2.204 2.205c-.968.968-2.623.5-2.94-.832l-.584-2.454a3.08 3.08 0 00-1.707-2.084l-1.327-.613a1.75 1.75 0 01-.504-2.826L4.456.734z" fill="currentColor"/></svg>
+                    Pinned</div>
+                <div class="tiles-container">${pinned.map(r => renderTile(r, config)).join("")}</div>`;
+            }
+
+            if (rest.length) {
+                html += `<div class="section-label" style="margin-top:0.5rem">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-6a1 1 0 00-1 1v6.708A2.486 2.486 0 017.5 9h5V1.5z" fill="currentColor"/></svg>
+                    All repositories</div>
+                <div class="tiles-container">${rest.map(r => renderTile(r, config)).join("")}</div>`;
+            }
+
+            document.getElementById("content").innerHTML = html;
+            document.getElementById("footer").innerHTML =
+                `<a href="https://github.com/${config.githubUser}" target="_blank" rel="noopener">@${config.githubUser}</a> &middot; ${pinned.length + rest.length} utilities`;
+        } catch (err) {
+            document.getElementById("content").innerHTML =
+                `<div class="error-banner">Failed to load: ${err.message}. Try refreshing.</div>`;
+        }
+    })();
+    </script>
 </body>
 </html>

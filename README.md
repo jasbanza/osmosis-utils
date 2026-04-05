@@ -1,24 +1,53 @@
-# osmosis-utils
-Menu for Osmosis utilities
+# Osmosis Utils
 
-🔗 [Live Demo on GitHub Pages](https://jasbanza.github.io/osmosis-utils/)
+Osmosis & Cosmos ecosystem utilities by @jasbanza
 
-## Available Utilities
+[Live site on GitHub Pages](https://jasbanza.github.io/osmosis-utils/)
 
-### 1. Osmosis List Pools
-A utility to list and explore pools on the Osmosis decentralized exchange. View pool information, liquidity, and trading data.
+## Pinned
 
-- 🚀 [Launch Utility](https://jasbanza.github.io/osmosis-list-pools/)
-- 📦 [Repository](https://github.com/jasbanza/osmosis-list-pools)
+| Name | Description | Language | Links |
+|------|-------------|----------|-------|
+| **Osmosis Cancel Limitorders** | Look up and cancel Osmosis limit orders | JavaScript | [Repo](https://github.com/jasbanza/osmosis-cancel-limitorders) / [Launch](https://jasbanza.github.io/osmosis-cancel-limitorders/) |
+| **Osmosis List Pools** | Advanced osmosis pool search | HTML | [Repo](https://github.com/jasbanza/osmosis-list-pools) / [Launch](https://jasbanza.github.io/osmosis-list-pools/) |
+| **Osmosis IBC Monitor** | Monitors IBC client status for Osmosis assets. Identifies expired or frozen IBC clients. | JavaScript | [Repo](https://github.com/jasbanza/osmosis-ibc-monitor) |
+| **Cosmos Chain Wallet Checker** | Checks wallet balances at specific block heights | JavaScript | [Repo](https://github.com/jasbanza/cosmos-chain-wallet-checker) / [Launch](https://jasbanza.github.io/cosmos-chain-wallet-checker/) |
+| **Osmosis Tick Price** | Get the price of a pool's tick on Osmosis. | HTML | [Repo](https://github.com/jasbanza/osmosis-tick-price) / [Launch](https://jasbanza.github.io/osmosis-tick-price/) |
+| **gRPC Web Explorer** | Inspired by GRPCUI, with more persistent state / locally stored  |  | [Repo](https://github.com/jasbanza/grpcwebexplorer) |
 
-### 2. Cosmos Chain Wallet Checker
-Check wallet balances and holdings across Cosmos ecosystem chains. A convenient tool for monitoring your assets across multiple chains.
+## All Repositories
 
-- 🚀 [Launch Utility](https://jasbanza.github.io/cosmos-chain-wallet-checker/)
-- 📦 [Repository](https://github.com/jasbanza/cosmos-chain-wallet-checker)
+| Name | Description | Language | Updated | Links |
+|------|-------------|----------|---------|-------|
+| **CCTP Relayer** | CCTP relayer implementation | JavaScript | 2026-04-02 | [Repo](https://github.com/jasbanza/cctp-relayer) / [Launch](https://jasbanza.github.io/cctp-relayer/) |
+| **Skip Swap Exporter** | Exports csv of skip swaps for source/destination addresses | JavaScript | 2026-01-25 | [Repo](https://github.com/jasbanza/skip-swap-exporter) / [Launch](https://jasbanza.github.io/skip-swap-exporter/) |
+| **Cosmos Node Status Report** | Tests cosmos-sdk blockchain nodes (RPC/REST/gRPC) and generates a report. | Python | 2025-11-12 | [Repo](https://github.com/jasbanza/cosmos-node-status-report) |
+| **Wallet Simulator** | Browser extension allowing arbitrary custom addresses for frontend testing purposes. |  | 2025-10-24 | [Repo](https://github.com/jasbanza/wallet-simulator) |
+| **Cosmosmillions Rescue** | dApp to withdraw from cosmosmillions on lum network | JavaScript | 2025-04-23 | [Repo](https://github.com/jasbanza/cosmosmillions-rescue) / [Launch](https://jasbanza.github.io/cosmosmillions-rescue/) |
+| **Node.js RPC Proxy** | simple rpc proxy with rate limiting and shared key | JavaScript | 2025-02-19 | [Repo](https://github.com/jasbanza/nodejs-rpc-proxy) |
+| **Crypto Payroll** | payroll engine for crypto | JavaScript | 2024-06-10 | [Repo](https://github.com/jasbanza/crypto-payroll) |
+| **TFM Cancel Orders** | dApp to cancel orders on TFM | JavaScript | 2023-12-17 | [Repo](https://github.com/jasbanza/tfm-cancel-orders) / [Launch](https://jasbanza.github.io/tfm-cancel-orders/) |
+| **Cosmos Relayer Monitor** | system service to spawn rly child process with stdout to websocket using nodejs | HTML | 2023-12-11 | [Repo](https://github.com/jasbanza/cosmos-relayer-monitor) |
+| **Autoswap Cancel Orders** | Frontend to cancel missing limit orders on Autonomy's Autoswap (on Osmosis) | JavaScript | 2023-11-03 | [Repo](https://github.com/jasbanza/autoswap-cancel-orders) / [Launch](https://jasbanza.github.io/autoswap-cancel-orders/) |
+| **Osmosis CL Pool Alerts** | Bot to notify of supercharged pool tick ranges | JavaScript | 2023-10-09 | [Repo](https://github.com/jasbanza/osmosis-cl-pool-alerts) |
+| **Osmosis CL Bot Demo** | Bot to manage supercharged positions on Osmosis |  | 2023-09-25 | [Repo](https://github.com/jasbanza/osmosis-cl-bot-demo) |
+| **Osmosis Companion** | A browser extension companion utility for https://app.osmosis.zone | JavaScript | 2023-08-23 | [Repo](https://github.com/jasbanza/osmosis-companion) / [Launch](https://jasbanza.github.io/osmosis-companion/) |
+| **Osmosis CL Monitor** | nodejs service to monitor osmosis supercharged positions  | JavaScript | 2023-08-01 | [Repo](https://github.com/jasbanza/osmosis-cl-monitor) |
+| **Osmosis Chainlist Monitor** | Monitors external chain REST endpoints as set in https://github.com/osmosis-labs/assetlists/blob/main/osmosis-1/osmosis-1.chainlist.json | JavaScript | 2023-07-22 | [Repo](https://github.com/jasbanza/osmosis-chainlist-monitor) |
+| **Osmosis Gauges Monitor** | Monitor liquidity pool gauges on Osmosis.zone | JavaScript | 2023-02-24 | [Repo](https://github.com/jasbanza/osmosis-gauges-monitor) |
+| **Osmosis Externals Bot** | Alert bot for Osmosis external incentives | JavaScript | 2023-02-21 | [Repo](https://github.com/jasbanza/osmosis-externals-bot) |
+| **Osmosis Externals Query** | Node.js Web Service to cache and query Osmosis's external incentive gauges | JavaScript | 2023-02-10 | [Repo](https://github.com/jasbanza/osmosis-externals-query) |
+| **Osmosis Externals Data Migrator** | Periodically push Osmosis's External Gauges data to MongoDB Atlas cloud deployment. | JavaScript | 2023-02-02 | [Repo](https://github.com/jasbanza/osmosis-externals-data-migrator) |
+| **Osmosis Toolkit (Legacy)** | Osmosis dApp for advanced transactions. | TypeScript | 2022-11-14 | [Repo](https://github.com/jasbanza/osmosis-toolkit-old) / [Launch](https://jasbanza.github.io/osmosis-toolkit-old/) |
+| **Osmosis Gauges Alerting Service** | Listen for osmosis-gauges-api change stream events and trigger custom webhooks |  | 2022-11-01 | [Repo](https://github.com/jasbanza/osmosis-gauges-alerting-service) |
+| **Osmosis Gauges API** | Osmosis incentives gauges API with NodeJS & MongoDB |  | 2022-11-01 | [Repo](https://github.com/jasbanza/osmosis-gauges-api) |
+| **Cosmos Chain Registry Reader** | node.js library to read the cosmos chain-registry | JavaScript | 2022-09-01 | [Repo](https://github.com/jasbanza/cosmos-chain-registry-reader) / [Launch](https://jasbanza.github.io/cosmos-chain-registry-reader/) |
+| **OsmoJS Wallet** | Node.js class module to use an osmosis wallet with full functionality using osmojs |  | 2022-07-20 | [Repo](https://github.com/jasbanza/osmojs-wallet) |
+| **Cosmos API Aggregator** | Node.js CORS reverse-proxy api-gateway for rest endpoints found in https://github.com/cosmos/chain-registry | JavaScript | 2022-04-14 | [Repo](https://github.com/jasbanza/cosmos-api-aggregator) |
+| **Cosmos Airdrop Tracker** | Cosmos Airdrop Tracker |  | 2021-11-13 | [Repo](https://github.com/jasbanza/cosmos-airdrop-tracker) |
 
 ---
 
-## About
+Built by [@jasbanza](https://github.com/jasbanza). Run `node build.js` to regenerate this README from [config.json](config.json).
 
-This repository serves as a central hub for accessing various Osmosis and Cosmos ecosystem utilities built by [@jasbanza](https://github.com/jasbanza).
+The [live site](https://jasbanza.github.io/osmosis-utils/) loads dynamically from the GitHub API — no build step needed for the page itself.
