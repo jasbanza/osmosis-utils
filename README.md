@@ -9,7 +9,7 @@ Osmosis & Cosmos ecosystem utilities by @jasbanza
 | Name | Description | Language | Links |
 |------|-------------|----------|-------|
 | **CCTP Relayer** | CCTP relayer implementation | JavaScript | [Repo](https://github.com/jasbanza/cctp-relayer) / [Launch](https://jasbanza.github.io/cctp-relayer/) |
-| **Axelar GMP Recovery** | Self-service recovery tool for stuck Axelar GMP cross-chain transfers | JavaScript | [Repo](https://github.com/jasbanza/axelar-recovery) |
+| **Axelar GMP Recovery** | Self-service recovery tool for stuck Axelar GMP cross-chain transfers | JavaScript | [Repo](https://github.com/jasbanza/axelar-recovery) / [Launch](https://axelar-recovery.vercel.app/) |
 | **Cosmos Chain Wallet Checker** | Checks wallet balances at specific block heights | JavaScript | [Repo](https://github.com/jasbanza/cosmos-chain-wallet-checker) / [Launch](https://jasbanza.github.io/cosmos-chain-wallet-checker/) |
 | **Osmosis Cancel Limitorders** | Look up and cancel Osmosis limit orders | JavaScript | [Repo](https://github.com/jasbanza/osmosis-cancel-limitorders) / [Launch](https://jasbanza.github.io/osmosis-cancel-limitorders/) |
 | **Osmosis Tick Price** | Get the price of a pool's tick on Osmosis. | HTML | [Repo](https://github.com/jasbanza/osmosis-tick-price) / [Launch](https://jasbanza.github.io/osmosis-tick-price/) |

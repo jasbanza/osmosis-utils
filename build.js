@@ -95,9 +95,10 @@ function buildREADME(config, pinned, rest) {
       const desc = (r.description || "").replace(/\|/g, "\\|");
       const lang = r.language || "";
       const repoLink = `[Repo](${r.html_url})`;
-      const deployLink = r.has_pages
-        ? ` / [Launch](https://${user}.github.io/${r.name}/)`
-        : "";
+      const launchUrl =
+        (config.launchOverrides && config.launchOverrides[r.name]) ||
+        (r.has_pages ? `https://${user}.github.io/${r.name}/` : null);
+      const deployLink = launchUrl ? ` / [Launch](${launchUrl})` : "";
       lines.push(
         `| **${title}** | ${desc} | ${lang} | ${repoLink}${deployLink} |`
       );
@@ -117,9 +118,10 @@ function buildREADME(config, pinned, rest) {
       const lang = r.language || "";
       const updated = r.pushed_at ? r.pushed_at.slice(0, 10) : "";
       const repoLink = `[Repo](${r.html_url})`;
-      const deployLink = r.has_pages
-        ? ` / [Launch](https://${user}.github.io/${r.name}/)`
-        : "";
+      const launchUrl =
+        (config.launchOverrides && config.launchOverrides[r.name]) ||
+        (r.has_pages ? `https://${user}.github.io/${r.name}/` : null);
+      const deployLink = launchUrl ? ` / [Launch](${launchUrl})` : "";
       lines.push(
         `| **${title}** | ${desc} | ${lang} | ${updated} | ${repoLink}${deployLink} |`
       );

@@ -40,6 +40,9 @@
     "osmosis-cl-pool-alerts": "Osmosis CL Pool Alerts",
     "axelar-recovery": "Axelar GMP Recovery"
   },
+  "launchOverrides": {
+    "axelar-recovery": "https://axelar-recovery.vercel.app/"
+  },
   "exclude": [
     "osmosis",
     "osmosis-website",
