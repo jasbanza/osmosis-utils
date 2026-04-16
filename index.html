@@ -266,7 +266,9 @@
             const lang = repo.language;
             const stars = repo.stargazers_count || 0;
             const repoUrl = repo.html_url;
-            const deployUrl = `https://${config.githubUser}.github.io/${repo.name}/`;
+            const deployUrl =
+                (config.launchOverrides && config.launchOverrides[repo.name]) ||
+                (repo.has_pages ? `https://${config.githubUser}.github.io/${repo.name}/` : null);
 
             let badges = "";
             if (lang) {
@@ -278,7 +280,7 @@
             }
 
             let links = "";
-            if (repo.has_pages) {
+            if (deployUrl) {
                 links += `<a href="${deployUrl}" target="_blank" rel="noopener" class="tile-link deployment">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/><path d="M5 5v14h14v-7h-2v5H7V7h5V5H5z"/></svg>
                     Launch</a>`;
