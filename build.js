@@ -71,6 +71,12 @@ function titleFromName(name) {
     .replace(/\bDapp\b/g, "dApp");
 }
 
+function deployLabel(url) {
+  if (url.includes("github.io")) return "GitHub Pages";
+  if (url.includes("vercel.app")) return "Vercel";
+  return "Website";
+}
+
 function buildREADME(config, pinned, rest) {
   const user = config.githubUser;
   const all = [...pinned, ...rest];
@@ -98,7 +104,7 @@ function buildREADME(config, pinned, rest) {
       const launchUrl =
         (config.launchOverrides && config.launchOverrides[r.name]) ||
         (r.has_pages ? `https://${user}.github.io/${r.name}/` : null);
-      const deployLink = launchUrl ? ` / [Launch](${launchUrl})` : "";
+      const deployLink = launchUrl ? ` / [${deployLabel(launchUrl)}](${launchUrl})` : "";
       lines.push(
         `| **${title}** | ${desc} | ${lang} | ${repoLink}${deployLink} |`
       );
@@ -121,7 +127,7 @@ function buildREADME(config, pinned, rest) {
       const launchUrl =
         (config.launchOverrides && config.launchOverrides[r.name]) ||
         (r.has_pages ? `https://${user}.github.io/${r.name}/` : null);
-      const deployLink = launchUrl ? ` / [Launch](${launchUrl})` : "";
+      const deployLink = launchUrl ? ` / [${deployLabel(launchUrl)}](${launchUrl})` : "";
       lines.push(
         `| **${title}** | ${desc} | ${lang} | ${updated} | ${repoLink}${deployLink} |`
       );
