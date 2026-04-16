@@ -9,7 +9,8 @@
     "^skip-",
     "^tfm-",
     "^autoswap-",
-    "^osmojs-"
+    "^osmojs-",
+    "^axelar-"
   ],
   "include": [
     "grpcwebexplorer",
@@ -20,6 +21,7 @@
   ],
   "pinned": [
     "cctp-relayer",
+    "axelar-recovery",
     "cosmos-chain-wallet-checker",
     "osmosis-cancel-limitorders",
     "osmosis-tick-price",
@@ -35,7 +37,8 @@
     "osmosis-toolkit-old": "Osmosis Toolkit (Legacy)",
     "osmosis-cl-bot-demo": "Osmosis CL Bot Demo",
     "osmosis-cl-monitor": "Osmosis CL Monitor",
-    "osmosis-cl-pool-alerts": "Osmosis CL Pool Alerts"
+    "osmosis-cl-pool-alerts": "Osmosis CL Pool Alerts",
+    "axelar-recovery": "Axelar GMP Recovery"
   },
   "exclude": [
     "osmosis",
